@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import time
 import os 
+import atexit
 
 from utils import *
 
@@ -110,6 +111,8 @@ for i, chunk in enumerate(context_chunks):
         best_score = total_raw_score
         best_answer = current_answer
 
+
+atexit.register(print_timing_summary)
 print(f"\n✅ Final Best Answer: {best_answer}")
 print(f"📈 Confidence Score (Raw): {best_score:.4f}")
 
