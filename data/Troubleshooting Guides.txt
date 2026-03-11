@@ -1,0 +1,16 @@
+If you are experiencing issues with the Aura Mobile App (Version 4.2.1) or the web-based Claims Portal, please follow these technical troubleshooting steps before contacting IT support.
+
+Login and Authentication Issues:
+If the "Invalid Credentials" error persists despite a password reset, ensure your "Policy ID" is entered in the format AA-XXXX-0000. The system is case-sensitive. If you have recently renewed your policy, there is a 24-hour propagation delay before the new Policy ID is active in the digital portal.
+
+Document Upload Failures:
+The "Photo Evidence" tool during the claim filing process requires specific parameters:
+
+File Size: Maximum 10MB per image.
+
+File Format: Only .JPG, .PNG, or .HEIC (Apple) files are supported. .PDF files must be uploaded via the "Supporting Documents" tab, not the "Damage Gallery."
+
+Browser: For web users, Chrome (v110+) or Safari (v15+) is required. Users on Internet Explorer will encounter "Error 505: Legacy Incompatibility."
+
+Clearing Cache:
+If your "Claim Status" appears stuck on "Pending Review" for more than 72 hours, clear your browser's local storage and cookies to force a refresh of the real-time API feed.

@@ -1,0 +1,16 @@
+At Aura Assurance, the protection of Personally Identifiable Information (PII) is governed by the Aura Data Governance Framework (v3.0). We comply with the California Consumer Privacy Act (CCPA) and the General Data Protection Regulation (GDPR) for our international clients.
+
+Data Collection:
+We collect data through "Aura Telematics" (for auto policies), credit inquiries via TransUnion, and property satellite imagery. This data is used solely for risk assessment and premium calculation.
+
+Data Sharing:
+Aura Assurance does not sell customer data to third-party marketing firms. However, we do share necessary data with:
+
+Reinsurance Partners: To manage our corporate risk load.
+
+The NICB: The National Insurance Crime Bureau to prevent fraudulent claims.
+
+Mortgage Servicers: To confirm active coverage for lienholders.
+
+Security Protocols:
+All data stored in our "AuraCloud" servers is encrypted using AES-256 bit standards. Access to customer Social Security numbers is restricted to Level III Security cleared employees and is masked in all general customer support interfaces.
