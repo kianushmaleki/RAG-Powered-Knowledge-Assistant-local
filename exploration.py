@@ -7,11 +7,12 @@ from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.providers.anthropic import AnthropicProvider
 from dotenv import load_dotenv
 
+from schema import AssistantResponse
+
+
 load_dotenv()
 
-class AssistantResponse(BaseModel):
-    answer: str
-    confidence: float
+
 
 # 1. Your Key
 MY_KEY = os.getenv("ANTHROPIC_API_KEY")
@@ -24,8 +25,8 @@ agent = Agent(model, output_type=AssistantResponse)
 
 async def main():
     try:
-        result = await agent.run("what is two times 100?")
-        print(f"Success! Response: {result.output}")
+        result = await agent.run("what is up")
+        print(f"Success! Response: {result.output.answer}")
         print(f"Confidence: {result.output.confidence}")
         
     except Exception as e:
