@@ -2,7 +2,6 @@
 venv/
 .venv/
 env/
-.env
 bin/
 lib/
 .vscode/
@@ -15,3 +14,9 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+
+# key files
+.env
+
+# practice files
+test.py
