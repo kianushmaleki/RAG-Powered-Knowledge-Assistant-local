@@ -1,6 +1,7 @@
 import pydantic_ai
 import os
 import asyncio
+import anthropic
 from pydantic import BaseModel
 from pydantic_ai import Agent
 from pydantic_ai.models.anthropic import AnthropicModel
@@ -39,7 +40,7 @@ if __name__ == "__main__":
 
 
 print('-'*50)
-import anthropic
+
 
 client = anthropic.Anthropic(
     api_key=os.environ["ANTHROPIC_API_KEY"],
@@ -65,3 +66,7 @@ completion = client.messages.create(
 
 print(completion.content[0].text)
 
+
+
+
+print('-'*50)

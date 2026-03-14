@@ -115,5 +115,3 @@ for i, chunk in enumerate(context_chunks):
 atexit.register(print_timing_summary)
 print(f"\n✅ Final Best Answer: {best_answer}")
 print(f"📈 Confidence Score (Raw): {best_score:.4f}")
-
-
