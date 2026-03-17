@@ -1,6 +1,8 @@
 # RAG-Powered Knowledge Assistant
 
-A customer support assistant that leverages Retrieval-Augmented Generation (RAG) and transformer-based question answering to answer questions from your internal documentation.
+- Context-Aware Text Chunking: Employs a sliding window approach with configurable chunk_size and overlap to ensure the NLP model processes large documents without losing information at the boundaries.
+
+- High-Performance QA Extraction: Leverages AutoModelForQuestionAnswering and PyTorch to perform real-time inference, selecting answers based on the highest confidence logit scores across multiple document segments.
 
 ## Features
 - Loads and processes multiple text documents from the `data/` folder
