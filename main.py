@@ -9,8 +9,12 @@ import pandas as pd
 import time
 import os 
 import atexit
+import torch
+from typing import List
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 
 from utils import *
+from utils import print_timing_summary
 
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
@@ -21,7 +25,7 @@ from sentence_transformers import util
 import chromadb
 from chromadb.utils import embedding_functions
 
-from utils.vector_ops import normalize
+from utils.functions import normalize
 from utils.decorators import timer_decorator
 
 
@@ -36,19 +40,18 @@ question = "What is name of the company?"
 my_chunk_size = 300
 my_overlap = 100
 
-# read the txt files from the data folder
-documents = []
-@timer_decorator
-def load_documents(data_folder):
-    '''
-    Loads all .txt files from the specified folder and appends their content to the 'documents' list.
-    Args:
-        data_folder (str): The path to the folder containing .txt files.
-    '''
-    for filename in os.listdir(data_folder):
-        if filename.endswith(".txt"):
-            with open(os.path.join(data_folder, filename), "r", encoding="utf-8") as file:
-                documents.append(file.read())
+download_documents = input("Do you want to download the documents? (y/n): ")
+if download_documents.lower() == 'y':
+    # Simulate downloading documents (you can replace this with actual download code)
+    print("Downloading documents...")
+    
+    print("Documents downloaded successfully!")
+else:
+    print("Skipping document download.")
+
+
+
+
 
 
 @timer_decorator
@@ -82,6 +85,7 @@ qa_model = AutoModelForQuestionAnswering.from_pretrained(model_name)
 
 my_data_folder = 'data'
 load_documents(my_data_folder)
+documents = load_documents(my_data_folder)
 print(f"Loaded {len(documents)} documents from '{my_data_folder}' folder.")
 context = "\n\n".join(documents)
 context_chunks = chunk_text(context, tokenizer)
@@ -104,6 +108,7 @@ for i, chunk in enumerate(context_chunks):
     
     # CLEANING: If the model picks the [CLS] token or the question itself, ignore it
     current_answer = current_answer.replace("[CLS]", "").strip()
+    current_answer = tokenizer.decode(inputs.input_ids[0][answer_start : answer_end + 1], skip_special_tokens=True).strip()
 
     # 3. Update Best Answer
     # We only update if the score is better AND the answer isn't empty/junk
