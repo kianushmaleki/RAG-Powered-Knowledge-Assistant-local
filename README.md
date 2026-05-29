@@ -1,5 +1,24 @@
 # RAG-Powered Knowledge Assistant
 
+
+> This repository has moved to:
+>
+> https://github.com/drkianmaleki/RAG-Powered-Knowledge-Assistant
+>
+> The `drkianmaleki` version is the maintained professional portfolio version of this project. It has been rebuilt as a basic Streamlit RAG chatbot with Pydantic validation, local embeddings, in-memory retrieval, and source-grounded answers.
+
+## Status
+
+This repository is kept only as a legacy reference.
+
+The active version is now maintained here:
+
+https://github.com/drkianmaleki/RAG-Powered-Knowledge-Assistant
+
+Please use the new repository for the current code, README, and future updates.
+
+---
+
 - Context-Aware Text Chunking: Employs a sliding window approach with configurable chunk_size and overlap to ensure the NLP model processes large documents without losing information at the boundaries.
 
 - High-Performance QA Extraction: Leverages AutoModelForQuestionAnswering and PyTorch to perform real-time inference, selecting answers based on the highest confidence logit scores across multiple document segments.
